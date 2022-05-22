@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="static/data/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="static/data/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/data/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/data/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/data/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/data/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/data/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/data/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/data/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="static/data/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/data/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/data/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/data/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/data/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="static/data/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon -->
+
+    <meta charset="utf-8">
+    <meta name="description" content="NPMs: Neural Parametric Models for 3D Deformable Shapes">
+    <meta name="keywords" content="SPAMs, SMPL">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Structured Implicit Parametric Models | SPAMs</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-179637159-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-179637159-1');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+                <a class="navbar-item" href="https://pablopalafox.github.io/">
+                    <span class="icon">
+                    <i class="fas fa-home"></i>
+            </span>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                    More Research
+                </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="">
+                            SPAMs
+                        </a>
+                        <a class="navbar-item" href="https://pablopalafox.github.io/npms/">
+                            NPMs
+                        </a>
+                        <a class="navbar-item" href="https://www.3dunderstanding.org/papers/2020/bozic2020nnrt/">
+                            Neural Non-Rigid Tracking
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">SPAMs: Structured Implicit Parametric Models</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                            <a href="https://pablopalafox.github.io/">Pablo Palafox<sup>1*</sup></a>,</span>
+                            <span class="author-block">
+                            <a href="https://nsarafianos.github.io/">Nikos Sarafianos<sup>2</sup></a>,</span>
+                            <span class="author-block">
+                            <a href="https://sites.google.com/site/tony2ng/">Tony Tung<sup>2</sup></a>,</span>
+                            <span class="author-block">
+                            <a href="https://www.3dunderstanding.org/team.html">Angela Dai<sup>1</sup></a></span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Technical University of Munich</span> &nbsp;
+                            <span class="author-block"><sup>2</sup>Meta Reality Labs Research, Sausalito, USA</span>
+                        </div>
+
+                        <div class="is-size-6 publication-authors">
+                            <span class="author-block"><sup>*</sup>This work was conducted during an internship at Meta Reality Labs Research.</span> &nbsp;
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                                <a href="palafox2021spams.pdf"
+                                     class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                    </span>
+                                <span>Paper</span>
+                                </a>
+                                </span>
+                                <span class="link-block">
+                                <a href="https://arxiv.org/abs/2201.08141"
+                                     class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                    </span>
+                                <span>arXiv</span>
+                                </a>
+                                </span>
+                                <!-- Video Link. -->
+                                <span class="link-block">
+                                <a href="https://www.youtube.com/watch?v=ChdjHNGgrzI"
+                                     class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                    </span>
+                                <span>Video</span>
+                                </a>
+                                </span>
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                <a href="https://github.com/pablopalafox/"
+                                     class="external-link button is-normal is-rounded is-dark" disabled="">
+                                    <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                    </span>
+                                <span>Code</span>
+                                </a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Conference -->
+                        <h2 style="text-align: center; font-size:1.6em; font-weight: 800;">CVPR 2022</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero teaser">
+        <div class="hero-body">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <video id="teaser" autoplay muted loop height="80%">
+                    <source src="static/data/teaser.mp4"
+                                    type="video/mp4">
+                </video>
+                    <h2 class="subtitle has-text-centered" style="margin-top: 30px">
+                        SPAMs enable a structured characterization of object movement, with part decomposition characterizing a 
+                        lower-dimensional space in which we can establish coarse motion correspondence.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero is-light is-small" style="background-color: #8c9b852a">
+        <div class="hero-body">
+            <div class="container">
+                <div id="results-carousel" class="carousel results-carousel">
+                    
+                    <div class="item item-cape-100">
+                        <video poster="" id="cape_100" autoplay controls muted loop height="100%">
+                            <source src="static/data/model_fitting/videos_carrousel_2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-hand-B">
+                        <video poster="" id="hand_B" autoplay controls muted loop height="100%">
+                            <source src="static/data/model_fitting/videos_carrousel_3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-mixamo-joe">
+                        <video poster="" id="mixamo_joe" autoplay controls muted loop height="100%">
+                            <source src="static/data/model_fitting/videos_carrousel_4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-cape-207">
+                        <video poster="" id="cape_207" autoplay controls muted loop height="100%">
+                            <source src="static/data/model_fitting/videos_carrousel_1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <script>
+    bulmaCarousel.attach('#results-carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 2
+    });
+</script> -->
+
+
+    <section class="section">
+        <div class="container">
+
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-two-thirds">
+                    <h2 class="title is-2">Abstract</h2>
+                    <div class="content has-text-justified">
+
+                        <p>
+                        Parametric 3D models have formed a fundamental role in modeling deformable objects, such as human bodies, faces, and hands; 
+                        however, the construction of such parametric models requires significant manual intervention and domain expertise.
+                        </p>
+                        
+                        <p>
+                        Recently, neural implicit 3D representations have shown great expressibility in capturing 3D shape geometry.
+                        We observe that deformable object motion is often semantically structured, and thus propose to learn 
+                        Structured Implicit Parametric Models (SPAMs) as a deformable object representation that structurally decomposes 
+                        non-rigid object motion into part-based disentangled representations of shape and pose, with each being represented by deep implicit functions.
+                        This enables a structured characterization of object movement, with part decomposition characterizing a 
+                        lower-dimensional space in which we can establish coarse motion correspondence.
+                        </p>
+
+                        <p>
+                        In particular, we can leverage the part decompositions at test time to fit to new depth sequences of unobserved shapes, 
+                        by establishing part correspondences between the input observation and our learned part spaces; this guides a robust 
+                        joint optimization between the shape and pose of all parts, even under dramatic motion sequences.
+                        Experiments demonstrate that our part-aware shape and pose understanding lead to state-of-the-art performance in 
+                        reconstruction and tracking of depth sequences of complex deforming object motion.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+
+        <div style="margin-top: 40px"></div>
+
+        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-two-thirds">
+                <h2 class="title is-2">Video</h2>
+                <div class="publication-video">
+                    <iframe src="https://www.youtube.com/embed/ChdjHNGgrzI?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <!--/ Paper video. -->
+</section>
+
+    <section class="section">
+        <div class="container">
+
+            <!-- Interpolation. -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-2">Semantic Latent Code Optimization</h2>
+
+                    <div class="content has-text-justified">
+                        <p>
+                            Here we show how our test-time model fitting converges across optimization steps,
+                            guided by our coarse semantic correspondences between input points (left pointcloud in each image) and posed estimates (right).
+                            Thanks to this structured characterization of object movement, we can even recover from poor initial pose estimates (e.g., green, right arm in optim step 0).
+                            Use the sliders to traverse across optimization steps for this given frame.
+                        </p>
+                    </div>
+
+                    <!-- Shape Space. -->
+                    <!-- <h3 class="title is-4">Semantic </h3> -->
+
+                    <div class="columns is-vcentered interpolation-panel">
+                        <div class="column is-3 has-text-centered">
+                            <img src="static/data/optim_steps/00000.jpg" class="interpolation-image" alt="Interpolate start reference image." />
+                            <p class="is-bold">Optim Step 0</p>
+                        </div>
+                        <div class="column interpolation-video-column">
+                            <div id="interpolation-image-wrapper-optim-steps">
+                                Loading...
+                            </div>
+                            <input class="slider is-fullwidth is-large is-info" id="interpolation-slider-optim-steps" step="1" min="0" max="199" value="0" type="range">
+                        </div>
+                        <div class="column is-3 has-text-centered">
+                            <img src="static/data/optim_steps/00198.jpg" class="interpolation-image" alt="Interpolation end reference image." />
+                            <p class="is-bold">Optim Step 200</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--/ Interpolation. -->
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+
+            <!-- Interpolation. -->
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-2">Robustness to Pose Code Intialization</h2>
+
+                    <div class="content has-text-justified">
+                        <p>
+                            We observe that our part-aware disentanglement of shape and pose provides 
+                            significant robustness in pose tracking, and in particular, 
+                            maintains robustness in the absence of pose encoder initialization 
+                            (which may not be available in scenarios such as generalizing to different sensor inputs).
+                        </p>
+                    </div>
+                        
+                    <div class="columns is-centered">
+                        <img src="static/data/robustness_to_pose_encoder/robustness.png" alt="ddd"/>
+                    </div> 
+
+                </div>
+            </div>
+            <!--/ Interpolation. -->
+        </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+        <div class="container">
+            <h2 class="title is-2">Publication</h2>
+            <a href="palafox2021spams.pdf" target="_blank"><img src="static/data/paper_overview.png" style="max-width:100%; margin-bottom: 20px" /></a>
+        </div>
+
+        <div class="container content">
+            <h2 class="title is-2">BibTeX</h2>
+            <pre style="background-color: #8c9b852a"><code>@article{palafox2021spams,
+    title={SPAMs: Structured Implicit Parametric Models},
+    author={Palafox, Pablo and Sarafianos, Nikolaos and Tung, Tony and Dai, Angela},
+    journal={CVPR},
+    year={2022}
+}</code></pre>
+        </div>
+    </section>
+
+
+    <footer class="footer" style="background-color: #dde7d82a">
+        <div class="container">
+            <div class="content has-text-centered">
+                <a class="icon-link" href="palafox2021npms.pdf">
+                    <i class="fas fa-file-pdf"></i>
+                </a>
+                <a class="icon-link" href="https://github.com/pablopalafox" class="external-link" disabled>
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p style="text-align:center">
+                            Source code mainly stolen from <a href="https://keunhong.com/">Keunhong Park</a>'s <a href="https://nerfies.github.io/">Nerfies website</a>.
+                        </p>
+                        <!-- <br/> -->
+                        <p style="text-align:center">
+                            Please contact <a href="https://pablopalafox.github.io/">Pablo Palafox</a> for feedback and questions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
