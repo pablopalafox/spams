@@ -1,1 +1,1 @@
-# spams
+# SPAMs: Structured Implicit Parametric Models
